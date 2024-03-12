@@ -486,3 +486,123 @@ Uma list comprehension (abrangência de lista) permite gerar essa mesma lista co
 quadrados2 = [value**2 for value in range(1, 11)]  # value é a expressão que eleva ao 2
 print(quadrados2)
 ```
+++++++++++++++++++++++
+# Fatiando uma lista
+
+Para criar uma fatia, especifique o índice do primeiro e do último
+elemento com os quais você quer trabalhar.
+
+```python
+# Avatares = ["Yangchen","Kurak","Kyoshi","Roku","Aang","Korra"]
+# print(Avatares[2:6])
+
+# Se o primeiro índice de uma fatia for omitido, Python começará sua
+# fatia automaticamente no início da lista
+# print(Avatares[:3])
+
+# Uma sintaxe semelhante funcionará se você quiser uma fatia que inclua o final de uma lista
+# Na programação, sintaxe se refere às regras e estruturas que devem ser seguidas para escrever instruções válidas em uma linguagem de programação específica.
+# print(Avatares[2:])
+
+# Indice de numeros negativos
+# Quando falamos sobre "um índice negativo", estamos nos referindo à contagem dos elementos de uma lista a partir do final. Então, um índice negativo -1 representa o último elemento da lista, -2 representa o penúltimo, e assim por diante.
+# print(Avatares[-1:])
+
+# Fatiando o for
+# Você pode usar uma fatia em um laço for se quiser percorrer um subconjunto de elementos de uma lista.
+personagens = ["Ellie", "Joel", "Dina", "Tommy", "Abby", "Jesse", "Maria", "Lev", "Yara", "Owen"]
+print("Nomes de alguns personagens do jogo The Last Of Us II:")
+for personagem in personagens[5:]:
+    print(personagem.title())
+
+### As fatias são muito úteis em várias situações Por exemplo, quando criar um jogo, você poderia adicionar a pontuação final de um jogador em uma lista sempre que esse jogador acabar de jogar. Seria possível então obter as três pontuações mais altas de um jogador ordenando a lista em ordem decrescente e obtendo uma lista que inclua apenas as três primeiras pontuações. Ao trabalhar com dados, você pode usar fatias para processar seus dados em porções de tamanho específico. Quando criar uma aplicação web, fatias poderiam ser usadas para exibir informações em uma série de páginas, com uma quantidade apropriada  de informações em cada página.
+
+## Copiando uma lista
+
+galaxias_bonitas = ["Andrômeda (M31)", "Sombrero (M104)", "Olho Negro (M64)", "Sculptor (NGC 253)", "Whirlpool (M51)"]
+minhas_galaxias = galaxias_bonitas[:3]
+
+# Exibindo a lista de galáxias bonitas
+vbonita = ", ".join(galaxias_bonitas)
+# print("As galáxias mais bonitas são:", vbonita)
+
+# Exibindo a lista secundária baseada na primeira lista de galáxias
+vfavorita = ", ".join(minhas_galaxias)
+# print("As minhas galáxias favoritas são:", vfavorita)
+
+# 11/03/24 - Segunda-Feira
+
+# Provando que realmente temos duas listas separadas, e adicionando um item em cada lista
+galaxias_bonitas.append("Galáxia do Olho de Gato")
+vbonita = ", ".join(galaxias_bonitas)
+print(vbonita)
+
+minhas_galaxias.append("Galáxia do Anel Polar")
+vfavorita = ", ".join(minhas_galaxias)
+print(vfavorita)
+
+# # Tuplas 
+
+# '''  Python refere-se a valores que não podem mudar como imutáveis, e uma lista imutável é chamada de tupla. 
+# Uma tupla se parece exatamente com uma lista, exceto por usar
+# parênteses no lugar de colchetes. Depois de definir uma tupla, podemos
+# acessar elementos individuais usando o índice de cada item, como
+# faríamos com uma lista '''
+
+# Casastark = ("lobo","Norte")
+# # print(Casastark[0])
+# # print(Casastark[1])
+
+# #  Tentando alterar um item da tupla
+# # Casastark [0] = ("Leao")
+# # print(Casastark[0])
+# # Python nos informa que não podemos atribuir um novo valor a um item em uma tupla:
+# # 'tuple' object does not support item assignment
+
+# # #  Exemplo em lista
+# # Lannister = ["lobo","Norte"]
+# # Lannister [0] = ("Leao")
+# # print(Lannister[0])
+
+# ''' Podemos percorrer todos os valores de uma tupla usando um laço for '''
+# casas_got = ["Stark", "Lannister", "Targaryen", "Baratheon", "Greyjoy", "Martell", "Tyrell", "Arryn", "Tully"]
+# print("Lista originais de casas:")
+# for casa in casas_got:
+#     print(casa)
+
+# '''Não podemos modificar a tupla original mas podemos armazena-la numa variavel pra modificar:'''
+# casas_got = "casas"
+# casas = ("Mormont", "Tarly", "Clegane", "Umber", "Karstark", "Reed", "Glover", "Manderly", "Hightower")
+# print("\nListas modificadas de casa:")
+# for house in casas:
+#     print(house)
+
+
+
+'''FAÇA VOCÊ MESMO!'''
+
+# Buffet: Um restaurante do tipo buffet oferece apenas cinco tipos básicos de comida. Pense em cinco pratos simples e armazene-os em uma tupla.
+comidas = ("Feijoada", "Salpicão", "Macarrão","Salada","Torta de Calabresa")
+pratos = ", ".join(comidas)
+print(pratos)
+
+# Use um laço for para exibir cada prato oferecido pelo restaurante.
+print("\nComidas no cardapio:")
+for comida in comidas:
+    print(comida)
+
+# Tente modificar um dos itens e cerifique-se de que Python rejeita a mudança
+# comidas [0] = ("Algodão")
+# comidas [2] = ("Salmão")
+# print(comidas[0])
+# print(comidas[2])
+
+# O restaurante muda seu cardápio, substituindo dois dos itens com pratos diferentes. Acrescente um bloco de código que reescreva a tupla e, em seguida, use um laço for para exibir cada um dos itens do cardápio revisado.
+novasComidas = comidas 
+novasComidas = ("Frutas da Água", "Sopas de Algas", "Chá de Jasmim", "Bolinhos de Arroz", "Bolo de Lótus")
+print("\nNovas comidas colocadas no cardapio:")
+for novacomida in novasComidas:
+    print(novacomida)
+
+
+
